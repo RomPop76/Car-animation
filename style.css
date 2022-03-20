@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.road {
+    display: flex;
+    align-items: center;
+    height: 210px;
+    width: 100%;
+    background-color: black;
+    margin-top: 20px;
+}
+
+.road::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, white 50%, black 50%);
+    background-size: 50px;
+    animation: animate_road 0.2s linear infinite;
+}
+
+@keyframes animate_road {
+    100% {
+        background-position: -50px;
+    }
+
+    ;
+}
+
+.v {
+    position: absolute;
+    left: 50px;
+    width: 200px;
+    height: 80px;
+    background-color: rgb(238, 177, 9);
+    top: 30px;
+    border-radius: 10px;
+    box-shadow: -10px 10px rgba(8, 8, 8, 1);
+    animation: animate_v 3s linear infinite;
+}
+
+@keyframes animate_v {
+    0% {
+        transform: translateX(0px) translateY(80px);
+    }
+
+    20% {
+        transform: translateX(180px) translateY(10px);
+    }
+
+    40% {
+        transform: translateX(280px) translateY(110px);
+    }
+
+    60% {
+        transform: translateX(380px) translateY(110px);
+    }
+
+    80% {
+        transform: translateX(480px) translateY(110px);
+    }
+
+    100% {
+        transform: translateX(880px) translateY(110px);
+    }
+}
+
+.v::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    width: 5px;
+    height: 15px;
+    border-radius: 2px;
+    background: red;
+    box-shadow: 0 45px red;
+}
+
+.v::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 190px;
+    width: 5px;
+    height: 15px;
+    border-radius: 2px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 45px rgb(255, 255, 255);
+}
+
+.b {
+    position: absolute;
+    inset: 5px 15px;
+    background: yellow;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.n1 {
+    position: absolute;
+    inset: 0 30px;
+    background: black;
+    border-radius: 10px;
+}
+
+.n1::before {
+    content: "";
+    position: absolute;
+    inset: 6px 25px;
+    background: yellow;
+    border-radius: 10px;
+}
+
+.n1::after {
+    content: "";
+    position: absolute;
+    inset: 0 52px;
+    background: yellow;
+    border-radius: 10px;
+}
+
+.n2 {
+    position: absolute;
+    inset: 0;
+}
+
+.n2::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    left: 20px;
+    top: 7px;
+    background: yellow;
+    transform-origin: right;
+    transform: rotate(15deg);
+    box-shadow: 100px 35px yellow;
+}
+
+.n2::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    left: 20px;
+    bottom: 7px;
+    background: yellow;
+    transform-origin: right;
+    transform: rotate(-15deg);
+    box-shadow: 100px -35px yellow;
+}
+
+.s {
+    position: absolute;
+}
+
+.s::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 190px;
+    width: 150px;
+    height: 16px;
+    background: linear-gradient(90deg, white, transparent);
+    transform-origin: left;
+    transform: perspective(500px) rotateY(-50deg);
+}
+
+.s:after {
+    content: "";
+    position: absolute;
+    top: 58px;
+    left: 190px;
+    width: 150px;
+    height: 16px;
+    background: linear-gradient(90deg, white, transparent);
+    transform-origin: left;
+    transform: perspective(500px) rotateY(-50deg);
+}
